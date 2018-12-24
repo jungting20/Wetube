@@ -5,10 +5,3 @@ export const users = (req,res) => res.send('user users');
 export const user_detail = (req,res) => res.send('user detail');
 export const user_edit = (req,res) => res.send('user edit')
 export const change_password = (req,res) => res.send('user change password');
-
-
-
-
-
-
-
