@@ -1,4 +1,4 @@
-export const videohome = (req,res) => res.send("Home");
+export const videohome = (req,res) => res.render("home");
 export const videosearch = (req,res) => res.send("search");
 export const videos = (req,res) => res.send('videos');
 export const delete_video = (req,res) => res.send('videos delete_video');

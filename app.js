@@ -4,6 +4,7 @@ import logger from "morgan";
 import helmet from "helmet";
 import cookieparser from "cookie-parser";
 import bodyparser from "body-parser";
+import { localsMiddlewares } from "./middlewares";
 import userRouter  from "./router/userRouter";
 import videoRouter from "./router/videoRouter";
 import globalRouter from "./router/globalRouter";
@@ -16,14 +17,20 @@ const app =express();
 } */
 //const handlehome = (req,res) => res.send('hello world');
 //const handleProfile = (req,res) => res.send('profile');
-
+app.use(helmet());//보안
+app.set('view engine','pug');
 app.use(cookieparser());
 app.use(bodyparser.urlencoded({extended:true}));//폼에서 넘어온 데이터 받으려면 설치 필수
 app.use(bodyparser.json());//폼에서 넘어온 데이터 받으려면 설치 필수
-app.use(helmet());//보안
 app.use(logger("dev"));
 //middle를 둘수있다 그러니까 중간에 실행하는거
 //app.get('/',betweenHome,handlehome);
+
+
+
+
+
+app.use(localsMiddlewares);
 app.use(routes.home,globalRouter);
 app.use(routes.user,userRouter);
 app.use(routes.videos,videoRouter);
