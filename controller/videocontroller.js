@@ -1,5 +1,9 @@
 export const videohome = (req,res) => res.render("home",{ pageTitle : 'Home' });
-export const videosearch = (req,res) => res.render("search",{ pageTitle : 'Search' });
+export const videosearch = (req,res) => {
+    const { query: { term:searchingBy }} = req;
+    return res.render("search",
+    { pageTitle : 'Search' , searchingBy })
+}
 export const videos = (req,res) => res.render('videos',{ pageTitle : 'videos' });
 export const delete_video = (req,res) => res.render('delete_video',{ pageTitle : 'delete_video' });
 export const edit_video = (req,res) => res.render('edit_video',{ pageTitle : 'edit_video' });
