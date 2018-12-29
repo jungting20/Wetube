@@ -1,4 +1,11 @@
 extends layout/main
 
 block content
-    p edit_profile
+    .form-container
+        form(action=routes.edit_profile, method="post")
+            label(for="avatar") Avatar
+            input(type="file", id="avatar",name="avatar")
+            input(type="text",placeholder="Name")
+            input(type="email", name="email",placeholder="Email")
+            input(type="submit",value="Update Profile")
+        a.from-container__link(href=`/users${routes.change_password}`) Change password
