@@ -28,7 +28,10 @@ export const postlogin = (req,res) => {
 };
 
 
-export const logout = (req,res) => res.render('logout',{ pageTitle : ' logout' });
+export const logout = (req,res) => {
+    //To do: Processs log out    
+    return res.redirect(routes.home);
+};
 export const users = (req,res) => res.render('users',{ pageTitle : ' users' });
 export const user_detail = (req,res) => {
     return res.render('user_detail',{ pageTitle : 'detail' })};
