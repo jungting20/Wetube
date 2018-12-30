@@ -1,5 +1,6 @@
 import routes from "../route";
 
+//join
 export const getjoin = (req,res) => {
     return res.render('join',{ pageTitle : ' join' })
     };
@@ -15,7 +16,18 @@ export const postjoin = (req,res) => {
     ? res.render('join',{ pageTitle : ' join' }) 
     : res.redirect(routes.home);
     };
-export const login = (req,res) => res.render('login',{ pageTitle : ' login' });
+    
+//login
+export const getlogin = (req,res) => {
+    
+    return res.render('login',{ pageTitle : ' login' })
+};
+export const postlogin = (req,res) => {
+    
+    return res.redirect(routes.home);
+};
+
+
 export const logout = (req,res) => res.render('logout',{ pageTitle : ' logout' });
 export const users = (req,res) => res.render('users',{ pageTitle : ' users' });
 export const user_detail = (req,res) => {
